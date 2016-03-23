@@ -1,0 +1,70 @@
+{# src/SYP/AdminBundle/Resources/views/Campaign/searchProfile.html.twig #}
+  
+{% extends "SYPAdminBundle::layout.html.twig"%}
+
+{% block sypadmin_body%}
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Recherche de Profils GPS
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
+<div class="mapContainer" ng-controller="searchProfileCtrl" ng-init="initMapLayer()">
+    <!--<div class="search-ville-block">
+        Recherchez une ville : <input type="text" ng-model="ville">
+    </div>-->
+    
+<div id="map"></div>
+<div class="container-fluid">
+    <div class="control-block">
+        <div class="yps-found menu-block rounded">
+            <h3>YouPubers</h3>
+            <div class="form-group">
+                <select class="form-control">
+                    <option>Recherche par déparement</option>
+                    <option ng-repeat="departement in departements">[[ campagne ]]</option>
+                </select>
+            </div>
+            <div class="content-block">
+                <div class="yp-item rounded ng-cloak" ng-repeat="found in youPuberFound track by $index">
+                    [[ found ]] 
+                    <i class="fa fa-plus-square pointer" ng-click="addFound($index)"></i>
+                </div>
+            </div>
+            <div class="menu-controls">
+                <span class="ng-cloak">[[ nbFound ]]</span>
+                <button type="button" class="btn btn-default" ng-click="addAll()"><i class="fa fa-arrow-down"></i> Tout</button> 
+                <input type="button" class="btn btn-default" value="Annuler" ng-click="clearFound()">
+            </div>
+        </div>
+        <div class="yps-selected menu-block rounded">
+            <h3>Sélectionnés</h3>
+            <div class="form-group">
+                <select class="form-control">
+                    <option>Sélectionnez une campagne</option>
+                    <option ng-repeat="campagne in campagnes">[[ campagne ]]</option>
+                </select>
+            </div>
+            <div class="content-block">
+                <div class="yp-item rounded ng-cloak" ng-repeat="selected in youPuberSelection">
+                    [[ selected ]] 
+                    <i class="fa fa fa-times pointer" ng-click="removeSelected($index)"></i>
+                </div>
+            </div>
+            <div class="menu-controls">
+                <span class="ng-cloak">[[ nbSelected ]]</span>
+                <input type="button" class="btn btn-default" value="Enregistrer" ng-click="save()">
+                <input type="button" class="btn btn-default" value="Annuler" ng-click="clearSelected()">
+            </div>
+        </div>
+    </div>
+    <!-- .control-block -->
+    <p class="loading-map text-center" ng-show="onloadTrace">
+        <i class="fa fa fa-cog fa-spin fa-4x"></i> <br>
+        Chargement...
+    </p>
+</div>
+{% endblock %}

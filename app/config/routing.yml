@@ -1,0 +1,14 @@
+syp_admin:
+    resource: "@SYPAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+syp_user:
+    resource: "@SYPUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+syp_campaign:
+    resource: "@SYPCampaignBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

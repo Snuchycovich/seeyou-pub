@@ -1,0 +1,241 @@
+{# src/SYP/CampaignBundle/Resources/views/Campaign/index.html.twig #}
+  
+{% extends "SYPCampaignBundle::layout.html.twig"%}
+
+{% block title %}
+  Bienvenus - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top"  onclick = $("#menu-close").click(); >See You Pub</a>
+            </li>
+            <li>
+                <a href="#top" onclick = $("#menu-close").click(); >Accueil</a>
+            </li>
+            <li>
+                <a href="#about" onclick = $("#menu-close").click(); >À propos</a>
+            </li>
+            <li>
+                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick = $("#menu-close").click(); >Nos Clients</a>
+            </li>
+            <li>
+                <a href="#exemple" onclick = $("#menu-close").click(); >Votre Campagne</a>
+            </li>
+            <li>
+                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <!--<img class="img-responsive" src="{{ asset('assets/img/seeyoupub-logo.png') }}" alt="">-->
+            <h1>See You Pub</h1>
+            <h3>Au service de votre marque</h3>
+            <br>
+            <a href="#about" class="btn btn-dark btn-lg">Ça m'intéresse</a>
+            <!--{# render url('syp_user_loginBlock') #}-->
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Qu'est-ce que c'est ?</h2>
+                    <p class="lead">Une communauté de YouPubers®, géolocalisés, qui peuvent afficher votre 
+                        message en 72h dans toute la France</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="services bg-primary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Comment ?</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-comments fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Où et Quand</strong>
+                                </h4>
+                                <p>Vous nous dites Où et Quand vous souhaitez Communiquer</p>
+                                <!--<a href="#" class="btn btn-light">Learn More</a>-->
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-car fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Flotte de YouPubers®</strong>
+                                </h4>
+                                <p>Nous vous proposons une flotte de YouPubers® disponibles dont le profil GPS est compatible</p>
+                                <!--<a href="#" class="btn btn-light">Learn More</a>-->
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Géolocalisable</strong>
+                                </h4>
+                                <p>En 72h, votre message est youpubé® et géolocalisable en temps réel</p>
+                                <!--<a href="#" class="btn btn-light">Learn More</a>-->
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-globe  fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Cartes et de statistiques</strong>
+                                </h4>
+                                <p>Nous fournissons des photos des véhicules impliqués ainsi que tout un éventail de cartes et de statistiques vous permettant de mesurer l'impact de la campagne</p>
+                                <!--<a href="#" class="btn btn-light">Learn More</a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+    <!--<aside class="callout">
+        <div class="text-vertical-center">
+            <h1>Vertically Centered Text</h1>
+        </div>
+    </aside>-->
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Déjà Clients</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <!--<div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                                </a>
+                            </div>
+                        </div>-->
+                    </div>
+                    <!-- /.row (nested) -->
+                    <a href="#" class="btn btn-dark">View More Items</a>
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Call to Action -->
+    <aside id="exemple" class="call-to-action bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>Celle-ci peut être Votre Campagne...</h3>
+                    <!--<a href="#" class="btn btn-lg btn-light">Click Me!</a>
+                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>-->
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Map -->
+    <section class="map" ng-controller="homeController" ng-init="initMapLayer()">
+        <div id="mapHome"></div>
+        <div id="demo"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>See You Pub</strong>
+                    </h4>
+                    <p>166 Rue du Clos Saint Denis<br>45560 Saint Denis en Val</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (+33) 06.62.81.17.58</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">seeyoupub@seeyou-pub.fr</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="https://www.facebook.com/seeyoupub/?fref=ts" target="_blank"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; See You Pub</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}    

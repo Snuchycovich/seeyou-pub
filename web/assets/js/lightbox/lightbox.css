@@ -1,0 +1,58 @@
+#lightbox {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 410px;
+	margin-left: -205px;
+	padding:5px;
+	background: #fff;
+	z-index: 1001;
+	display: none;
+}
+#lightbox-shadow {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	filter: alpha(opacity=75);
+	-moz-opacity: 0.75;
+	-khtml-opacity: 0.75;
+	opacity: 0.75;
+	z-index: 1000;
+	display: none;
+}
+#close-icone {
+	position:absolute;
+	top: 11px;
+	right: 15px;
+	width: 27px;
+	height: 27px;
+	z-index: 1002;
+	cursor:pointer;
+	background: url('images/close.png');
+}
+
+#map {
+	border-radius:5px;
+  height: 600px;
+}
+.creator, .rights{ font-size: 0.8em; font-style: italic;}
+.box {
+	background: white;
+	background-clip: padding-box;
+
+	margin: 7em -15em;
+	padding: 5em 1em;
+	width: 30em;
+
+	position: absolute;
+	left: 50%;
+
+	border: 0.1em solid rgba(255,255,255,0.7);
+	border-radius: 3px;
+	box-shadow: 0 0 0 9999px rgba(0,0,0,0.8);
+
+	text-align: center;
+}

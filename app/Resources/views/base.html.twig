@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>{% block title %}See You Pub{% endblock %}</title>
+        
+        {% block stylesheets %}
+            <!-- Bootstrap Core CSS -->
+            <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+            <!-- Leaflet Core CSS -->
+            <link href="{{ asset('assets/js/leaflet/leaflet.css') }}" rel="stylesheet">
+            <!-- Leaflet.draw  CSS -->
+            <link href="{{ asset('assets/js/leaflet.draw/leaflet.draw.css') }}" rel="stylesheet">
+            <!-- Leaflet.draw  CSS -->
+            <link href="{{ asset('assets/js/leaflet/Control.Geocoder.css') }}" rel="stylesheet">
+            <!-- Lightbox  CSS -->
+            <link href="{{ asset('assets/js/lightbox/lightbox.css') }}" rel="stylesheet">
+            <!-- Custom Fonts -->
+            <link href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+        {% endblock %}
+        {% block scriptHead %}
+            <script src="{{ asset('assets/js/angular.min.js') }}"></script>
+        {% endblock %}
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body ng-app="mapsApp">
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('assets/js/jquery.js') }}"></script>
+            <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+            
+            <script src="{{ asset('assets/js/leaflet/leaflet.js') }}"></script>
+            <script src="{{ asset('assets/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}"></script>
+            <script src="{{ asset('assets/js/leaflet.draw/leaflet.draw.js') }}"></script>
+            <script src="{{ asset('assets/js/leaflet/Control.Geocoder.js') }}"></script>
+            <script src="{{ asset('assets/js/lightbox/lightbox.js') }}"></script>
+            <script src="{{ asset('assets/js/mapApp.js') }}"></script>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        {% endblock %}
+    </body>
+</html>

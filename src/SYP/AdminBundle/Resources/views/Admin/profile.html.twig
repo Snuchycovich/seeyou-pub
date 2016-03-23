@@ -1,0 +1,57 @@
+{# src/SYP/AdminBundle/Resources/views/Campaign/profiles.html.twig #}
+  
+{% extends "SYPAdminBundle::layout.html.twig"%}
+
+{% block sypadmin_body%}
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Profiles
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
+<div class="mapContainer" ng-controller="profilesCtrl" ng-init="initMapLayer()">
+<div id="map"></div>
+<div class="container-fluid">
+    <div class="profiles control-block rounded">
+        <div class="menu-block">
+            <div class="form-group">
+                <label>Rechercher un YouPuber</label>
+                <input type="text" class="form-control" ng-model="query" placeholder="Tapez l'identifiant">
+            </div>
+            <div class="content-block">
+                <table>
+                    <tr>
+                        <th>YouPuber</th><th>Donné</th><th>Réel</th>
+                    </tr>
+                    <tr ng-repeat="youPuber in youPubersInDb | filter:query | orderBy: youpuber" ng-cloak>
+                        <td><span class="pointer" ng-click="showInfoMenu($event)" data="[[ youPuber ]]">[[ youPuber ]]</span></td><td><i class="fa fa-check profile-ok" title="Profile GPS Ok" ng-show="hasComProfile(youPuber)"></i></td><td><i class="fa fa-check profile-ok" title="Profile GPS Ok" ng-show="hasProfile(youPuber)"></i></td>
+                    </tr>
+                </table>    
+            </div>
+            <div>
+            <p class="text-center"><b>[[ nbYouPubersIns ]]</b> YouPubers inscrits</p>
+            </div>
+            <div class="menu-controls">
+                <button type="button" class="btn btn-default" ng-click="saveProfile()">Date - Profil</button>
+                <button type="button" class="btn btn-default" ng-click="clearMap()">Nettoyer Carte</button>
+            </div>
+        </div>
+    </div>
+    <div class="menu-info rounded" ng-show="showInfo">
+        <div class="yp-id">YouPuber : <strong>[[ youPuberLogin ]]<strong></div>
+        <input type="button" class="btn btn-default" value="Profil Donné" ng-click="showCommProfile(youPuberLogin)"> 
+        <input type="button" class="btn btn-default" value="Profil Réel" ng-click="showRealProfile(youPuberLogin)"> 
+        <select class="form-control">
+            <option>Sélectionnez une date</option>
+            <option></option>
+        </select>
+    </div>
+    <p class="loading-map text-center" ng-show="onloadTrace">
+        <i class="fa fa fa-cog fa-spin fa-4x"></i> <br>
+        Chargement...
+    </p>
+</div>
+{% endblock %}

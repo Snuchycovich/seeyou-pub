@@ -1,0 +1,19 @@
+syp_admin_homepage:
+    path:     /admin
+    defaults: { _controller: SYPAdminBundle:Admin:index }
+
+syp_admin_campaign:
+    path:     /admin/campagne
+    defaults: { _controller: SYPAdminBundle:Admin:viewCampaign }
+
+syp_admin_profiles:
+    path:     /admin/profiles
+    defaults: { _controller: SYPAdminBundle:Admin:profiles }
+
+syp_admin_search_profile:
+    path:     /admin/searchProfile
+    defaults: { _controller: SYPAdminBundle:Admin:searchProfile }
+
+syp_admin_upload_files:
+    path:     /admin/upload
+    defaults: { _controller: SYPAdminBundle:Admin:upload }

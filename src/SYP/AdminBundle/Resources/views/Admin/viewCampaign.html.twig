@@ -1,0 +1,53 @@
+{# src/SYP/AdminBundle/Resources/views/Campaign/viewCampaign.html.twig #}
+  
+{% extends "SYPAdminBundle::layout.html.twig"%}
+
+{% block sypadmin_body%}
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Campagnes <small>Darty</small>
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
+<div class="mapContainer" ng-controller="campaignController" ng-init="initMapLayer()">
+<div id="map"></div>
+<div class="container-fluid">
+    <div class="menu rounded">
+        <div class="form-group">
+            <label for="file">Sélectionnez un fichier:</label>
+            <select class="form-control" id="files">
+                <option>Fichier par date</option>
+                <option ng-repeat="file in filesByDate" ng-click="getData($event)" data="[[ file.file ]]">[[ file.date ]]</option>
+            </select>
+        </div>
+        <div class="stats" ng-show="isNotEmpty(ypByCampagne)">
+            <p><span>[[ nbYP ]]</span> YouPubers, <span>[[ nbSelectedYP ]]</span> affichés.</p>
+        </div>
+        <div class="youpubers-menu" ng-show="isNotEmpty(ypByCampagne)">
+            <div ng-repeat="yp in ypByCampagne track by $index" class="youpuber">
+                <div class="checkbox rounded ">
+                    <label>
+                        <input type="checkbox" value="[[ yp ]]" id="c-[[ yp ]]" class="cb-yp" ng-click="getIndividualTrace($event)" ng-checked="true">
+                        <span> 
+                        [[ yp ]]
+                        </span>
+                    </label>
+                    <button class="btnProfile" type="button" title="Enregister Profil GPS" ng-click="saveProfile(yp)">Profil</button>
+                    <i class="fa fa-check profile-ok" title="Profile GPS Ok" ng-show="hasProfile(yp)"></i>
+                </div>
+            </div>
+        </div>
+        <div class="menu-control" ng-show="isNotEmpty(ypByCampagne)">
+            <input type="button" class="btn btn-default" ng-click="showAll()" value="Afficher tout">
+            <input type="button" class="btn btn-default" ng-click="cleanAll()" value="Tout nettoyer">
+        </div>
+    </div>
+    <p class="loading-map text-center" ng-show="onloadTrace">
+        <i class="fa fa fa-cog fa-spin fa-4x"></i> <br>
+        Chargement...
+    </p>
+</div>
+{% endblock %}

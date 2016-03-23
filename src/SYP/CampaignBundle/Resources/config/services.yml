@@ -1,0 +1,4 @@
+services:
+#    syp_campaign.example:
+#        class: SYP\CampaignBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

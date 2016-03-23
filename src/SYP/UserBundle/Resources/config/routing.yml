@@ -1,0 +1,11 @@
+syp_user_homepage:
+    path:     /user
+    defaults: { _controller: SYPUserBundle:User:index }
+
+#syp_user_loginBlock:
+ #   path: /login
+  #  defaults:
+   #     _controller: FrameworkBundle:Template:template
+    #    template:    Security/login.html.twig
+     #   maxAge:       86400
+      #  sharedAge:    86400

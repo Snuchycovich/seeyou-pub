@@ -1,0 +1,10 @@
+/*================
+===== MIXINS =====
+================*/
+
+@mixin rounded_border($size: 5px) {
+  border-radius: $size;
+  -moz-border-radius: $size;
+  -webkit-border-radius: $size;
+  -o-border-radius: $size
+}

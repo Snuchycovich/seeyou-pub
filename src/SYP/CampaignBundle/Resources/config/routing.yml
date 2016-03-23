@@ -1,0 +1,7 @@
+syp_campaign_homepage:
+    path:     /
+    defaults: { _controller: SYPCampaignBundle:Campaign:index }
+
+syp_campaign_view:
+    path:     /campagnes/darty
+    defaults: { _controller: SYPCampaignBundle:Campaign:view }

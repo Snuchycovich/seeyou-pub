@@ -1,0 +1,4 @@
+services:
+#    syp_admin.example:
+#        class: SYP\AdminBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
